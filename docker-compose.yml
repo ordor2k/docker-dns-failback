@@ -1,0 +1,11 @@
+services:
+  dns-failover-proxy:
+    build: .
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      LISTEN_ADDR: "127.0.0.1"         # bind to host loopback
+      LISTEN_PORT: "5355"              # leave 53 to Pi-hole
+      PRIMARY_DNS: "127.0.0.1:5335"    # Unbound on host
+      FALLBACK_DNS: "1.1.1.1,8.8.8.8,9.9.9.9,1.0.0.1"
+      LOG_LEVEL: "INFO"

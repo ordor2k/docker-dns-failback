@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual envs
+venv/
+.env/
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.sock
+.docker/
+*.tar
+
+# Editor
+*.swp
